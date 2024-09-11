@@ -457,10 +457,9 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array(n)
-    .fill(Array(n).fill(0))
-    .map((v, i) => v.toSpliced(i, 1, 1));
+  return Array.from(Array(n), (_, index) => Array.from(Array(n), (__, i) => Number(index === i)));
 }
+
 
 /**
  * Creates an array of integers from the specified start to end (inclusive)
